@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -g
 
 
-BINS=forktest rawhelloarm hello exec1 exec2 exec3 exec4 orphans zombies #rawhellointel
+BINS=forktest rawhelloarm hello exec1 exec2 exec3 exec4 orphans zombies file_descriptors pipes #rawhellointel
 
 
 all: $(BINS)
