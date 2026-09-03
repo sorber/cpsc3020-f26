@@ -1,0 +1,18 @@
+Throughout the course, we will take a bottom-up approach as we move through the network stack. That said, you don't have to fully understand how TCP and UDP work in order to use them to make networked programs.
+
+So, on to the sockets API. 
+
+Note: Each major OS has its own version (the version that ships with Windows is called WinSock, for example). They're all about the same, but with occasional minor annoying differences, like putting different calls into different header files.
+
+There are many many different API options, that you CAN consider. I recommend you focus on the following as a very useful "core" that will meet your needs 90% of the time—and require only minor tweaking in most other cases.
+
+This "core" is going to consist of 4 different software roles: TCP client, TCP server, UDP client, UDP server. Here "server" just means that you're waiting for someone to communicate with you, either by connecting (TCP) or by sending you a datagram (UDP). Naturally then, a "client" initiates communication. Keep in mind that once communication starts, both sides are free to send and receive data. Also, if you want your program to operate in a peer-to-peer fashion, then each peer will need to be both a client and a server.
+
+So, start with four examples:
+
+tcpclient.c
+tcpserver.c
+udpclient.c
+udpserver.c
+
+
