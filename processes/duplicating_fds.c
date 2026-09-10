@@ -21,7 +21,7 @@ int main()
         return 1;
     }
 
-    printf("This text goes directly into the file.\n");
+        printf("This text goes directly into the file.\n");
 
     fclose(fp);
     // close(file_fd);

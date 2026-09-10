@@ -45,6 +45,9 @@ int main(int argc, char **argv)
             }
         }
 
+        snprintf(buff, sizeof(buff), "Hello");
+        write(connfd, buff, strlen(buff));
+
         // Now read the client's message.
         while ((n = read(connfd, recvline, MAXLINE)) > 0)
         {

@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
     // bzero(&servaddr, sizeof(servaddr));
     memset(&servaddr, 0, sizeof(servaddr));
-    servaddr.sin6_family = AF_INET6;         // use IPv4
+    servaddr.sin6_family = AF_INET6;         // use IPv6
     servaddr.sin6_port = htons(SERVER_PORT); /* the port my server is listening on */
 
     if (inet_pton(AF_INET6, argv[1], &servaddr.sin6_addr) <= 0)

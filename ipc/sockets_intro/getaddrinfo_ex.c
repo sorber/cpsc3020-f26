@@ -17,20 +17,20 @@ int main(int argc, char **argv)
     }
 
     char *hostname = argv[1];
-    struct addrinfo hints, *res0;
+    struct addrinfo hints, *pfirstResult;
 
     memset(&hints, 0, sizeof(hints));
-    hints.ai_socktype = SOCK_STREAM; // I'm only interested in STREAM sockets.
-    hints.ai_protocol = IPPROTO_TCP;
+    // hints.ai_socktype = SOCK_STREAM; // I'm only interested in STREAM sockets.
+    // hints.ai_protocol = IPPROTO_TCP;
 
-    int error = getaddrinfo(hostname, NULL, &hints, &res0);
+    int error = getaddrinfo(hostname, NULL, &hints, &pfirstResult);
 
     if (error)
     {
         errx(1, "%s", gai_strerror(error));
     }
     struct addrinfo *curaddr;
-    for (curaddr = res0; curaddr; curaddr = curaddr->ai_next)
+    for (curaddr = pfirstResult; curaddr; curaddr = curaddr->ai_next)
     {
         printf("candidate:\n");
         printf("\tfamily:\t%d\n", curaddr->ai_family);
@@ -57,5 +57,5 @@ int main(int argc, char **argv)
         printf("%s\n\n", addr_str);
     }
 
-    freeaddrinfo(res0);
+    freeaddrinfo(pfirstResult);
 }

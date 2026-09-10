@@ -1,6 +1,13 @@
 tcpclient
 tcpclientv2
+tcpclient_ipv6
 tcpserver
 tcpserverv2
 udpclient
+udpclientv2
+udpclient_ipv6
 udpserver
+activityserver
+activityclient
+getaddrinfo_ex
+unix_domain_sockets
