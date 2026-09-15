@@ -4,7 +4,7 @@ CC=clang
 ALLFLAGS= -g
 CFLAGS=-c
 COMMON_OBJS = common.o wrappers.o
-BINS = tcpclient tcpclientv2 tcpclient_ipv6 tcpserver udpclient udpclientv2 udpclient_ipv6 udpserver activityserver getaddrinfo_ex
+BINS = tcpclient tcpclientv2 tcpclient_ipv6 tcpserver udpclient udpclientv2 udpclient_ipv6 udpserver activityserver getaddrinfo_ex unix_domain_sockets
 
 all: $(COMMON_OBJS) $(BINS)
 	
@@ -17,4 +17,4 @@ all: $(COMMON_OBJS) $(BINS)
 
 
 clean:
-	rm -rf *.o $(BINS)
+	rm -rf *.o $(BINS) *.dSYM
