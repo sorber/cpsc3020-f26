@@ -14,16 +14,14 @@ int main(int argc, char **argv)
 {
     int sockfd;
     int sendbytes;
-    struct sockaddr_in servaddr, fromaddr;
-    char sendline[MAXLINE + 1];
+    struct sockaddr_in servaddr;
     char recvline[MAXLINE + 1];
-    socklen_t servaddr_length, fromaddr_length;
 
     if (argc != 3)
         err_n_die("usage: %s <server address> <name>", argv[0]);
 
     // setting up an address
-    bzero(&servaddr, sizeof(servaddr));
+    memset(&servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(SERVER_PORT); /* udp chat server port */
     // servaddr.sin_addr.s_addr = htonl(INADDR_BROADCAST);

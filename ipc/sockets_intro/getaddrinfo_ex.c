@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200112L
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
@@ -40,7 +42,7 @@ int main(int argc, char **argv)
         printf("\taddress:\t");
 
         char addr_str[INET6_ADDRSTRLEN];
-        void *addr_ptr;
+        void *addr_ptr = NULL;
 
         if (curaddr->ai_family == AF_INET)
         {

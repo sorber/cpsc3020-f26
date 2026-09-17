@@ -14,16 +14,14 @@ int main(int argc, char **argv)
 {
     int sockfd;
     int sendbytes;
-    struct sockaddr_in6 servaddr, fromaddr;
-    char sendline[MAXLINE + 1];
+    struct sockaddr_in6 servaddr;
     char recvline[MAXLINE + 1];
-    socklen_t servaddr_length, fromaddr_length;
 
     if (argc != 3)
         err_n_die("usage: %s <ipv6 server address> <name>", argv[0]);
 
     // setting up an address
-    bzero(&servaddr, sizeof(servaddr));
+    memset(&servaddr, 0, sizeof(servaddr));
     servaddr.sin6_family = AF_INET6;
     servaddr.sin6_port = htons(SERVER_PORT); /* udp server port */
 

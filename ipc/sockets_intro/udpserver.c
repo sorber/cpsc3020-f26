@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv)
 {
-    int listenfd, n;
+    int listenfd;
     struct sockaddr_in servaddr, from_address;
     char buff[MAXLINE + 1];
     char recvline[MAXLINE + 1];
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     if ((listenfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
         err_n_die("socket error.");
 
-    bzero(&servaddr, sizeof(servaddr));
+    memset(&servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servaddr.sin_port = htons(SERVER_PORT); /* server port */
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
         // now send a response.
         ticks = time(NULL);
-        snprintf(buff, sizeof(buff), "Thanks. Recved at (%.24s)\r\n", ctime(&ticks));
+        snprintf(buff, sizeof(buff), "(%d)Thanks. Recved at (%.24s)\r\n", recv_count, ctime(&ticks));
 
         // note: normally, you may want to check the results from sendto and close
         // in case errors occur. For now, I'm just exiting.
