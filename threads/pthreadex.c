@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 
 	// pthread_cancel(t1);
 
-	int *r1, r2;
+	int *r1, *r2;
 	pthread_join(t1, (void **)&r1);
 	pthread_join(t2, (void **)&r2);
 	printf("The result is %lu\n", sum);

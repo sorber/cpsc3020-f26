@@ -22,8 +22,9 @@ int main(int argc, char **argv)
     struct addrinfo hints, *pfirstResult;
 
     memset(&hints, 0, sizeof(hints));
+    // hints.ai_family = AF_INET;
     // hints.ai_socktype = SOCK_STREAM; // I'm only interested in STREAM sockets.
-    // hints.ai_protocol = IPPROTO_TCP;
+    //  hints.ai_protocol = IPPROTO_TCP;
 
     int error = getaddrinfo(hostname, NULL, &hints, &pfirstResult);
 
