@@ -17,7 +17,6 @@ typedef struct
     char name[13]; // 8 + '.' + 3 + '\0'
     uint8_t attributes;
     uint32_t size;
-    bool deleted; // true if this is a deleted file - only used for extra credit.
 } cat16_dirent_t;
 
 typedef struct
