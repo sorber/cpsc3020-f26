@@ -7,8 +7,6 @@
 #include <stdint.h>
 
 typedef struct cat16_volume cat16_volume_t;
-typedef struct cat16_file cat16_file_t;
-typedef struct cat16_dir cat16_dir_t;
 
 #define CAT16_SUCCESS 0
 
