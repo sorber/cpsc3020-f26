@@ -12,7 +12,7 @@ all: $(BINS)
 	$(CC) $(ALLFLAGS) -o $@ $^
 
 test:
-	echo -n "HELLO World, Guys" | nc -u -N -q 0 ada5.computing.clemson.edu 9999
+	echo -n "HELLO World, Guys" | nc -u -N -q 0 localhost 9999
 
 clean:
 	rm -rf *.o $(BINS) *.dSYM
