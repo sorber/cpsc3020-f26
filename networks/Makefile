@@ -4,7 +4,7 @@ CC=clang
 ALLFLAGS= -g -Wall -std=c11
 CFLAGS=-c
 COMMON_OBJS = 
-BINS = sniffer
+BINS = sniffer checksums httpex
 
 all: $(BINS)
 
